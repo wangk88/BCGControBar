@@ -1,0 +1,283 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="main.css" type="text/css">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Designer for Ribbon Control</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+  <tr>
+    <td valign="top"><b><font size="4">
+    <img border="0" src="bcgpro.gif" width="69" height="85"></font></b></td>
+    <td valign="top"><b><a name="Top">
+	<font size="2"></font>
+</a><font size="4">Ribbon Designer<br>
+Developer Guide</font></b><p>Copyright © 1998-2017 BCGSoft CO Ltd. All rights 
+    reserved. <br>
+    Microsoft, Visual C++, Visual Studio, Visual Studio.NET, Outlook, Windows 
+    and Windows NT are either registered trademarks or trademarks of Microsoft 
+    Corporation in the United States and/or other countries. All other 
+    trademarks are the property of their respective owners.</td>
+  </tr>
+</table>
+
+<ol>
+	<li>
+	<p align="left">
+	<a href="#Starting the Designer"><font size="2">Starting the designer</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Brief Description of Docking Windows"><font size="2">Brief Description of Docking 
+	Windows</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Adding a Category"><font size="2">Adding a Category</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Adding a Panel"><font size="2">Adding a Panel</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Adding Elements and Setting Properties"><font size="2">Adding Elements and 
+	Setting Properties</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Selecting a New Image and Editing Image Collection">
+	<font size="2">Selecting a 
+	New Image and Editing Image Collection</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Setting up QAT"><font size="2">Setting up QAT</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Modifying the  Application"><font size="2">Modifying the Application</font></a><font size="2"><br>
+&nbsp;</font></li>
+</ol>
+<p align="left"><font size="2">The Designer allows you 
+easily create mock ups for real applications. It takes an existing MFC project 
+as an input and generates an XML representation of Ribbon elements along with RC 
+files as an Output. When the designer part of the work has been done you just 
+compile the project, run and see the designed Ribbon control in action.</font></p>
+<p align="left"><font size="2">This guide explains how to 
+take advantage of the Designer tool.</font></p>
+<p align="left"><b><font size="2">Prerequisites.</font></b></p>
+<p align="left"><font size="2">First of all you have to 
+create an MFC or BCGControlBar Pro-based application using the Application 
+Wizard, or select an existing (MFC or BCGControlBar Pro-based) application. <br>
+The application must be either SDI, or MDI, because Ribbon Control can't be 
+created on dialogs.<br>
+The designer supports all Visual Studio projects ranging from Visual Studio 6.0 
+up to Visual Studio 2017.</font></p>
+<p align="left"><font size="2" color="#FF0000">Note. </font><font size="2">If you<font color="#FF0000"> </font>select a 
+pure MFC project, you'll need to perform some additional steps for migration 
+from MFC to BCGControlBar Pro.</font></p>
+<p align="left"><b>
+<a name="Starting the Designer"><font size="2"></font></a><font size="2">Starting the designer. 
+</font> </b></p>
+<p align="left"><font size="2">Run BCGPRibbonDesigner.exe 
+application. It offers you to open an existing project, or open a project from 
+the recent project list.<br>
+Select the desired project and the environment is ready to work!</font></p>
+<p align="left"><font size="2"><img border="0" src="design1.jpg"><br>
+<br>
+</font><a href="#Top"><font size="2">[Back to top]</font></a></p>
+<p align="left"><b>
+<a name="Brief Description of Docking Windows"><font size="2"></font></a>
+<font size="2">Brief Description of Docking 
+Windows </font></b></p>
+<ul>
+	<li>
+	<p align="left"><b><font size="2">Toolbox</font></b><font size="2"><br>
+	The Toolbox window contains a list of Ribbon objects that are supported by 
+	Ribbon Control and can be dropped on the Ribbon at design time.</font></li>
+	<li>
+	<p align="left"><b><font size="2">Elements<br>
+	</font>
+	</b><font size="2">The Elements window contains a tree of objects that have been already 
+	placed on the Ribbon at the design time.</font></li>
+	<li>
+	<p align="left"><b><font size="2">Actions<br>
+	</font>
+	</b><font size="2">The Action window lists some possible actions to be performed in the 
+	current context.</font></li>
+	<li>
+	<p align="left"><b><font size="2">TODO<br>
+	</font>
+	</b><font size="2">TODO window contains a list of actions that should be performed with 
+	your project in order to successfully build and run it.</font></li>
+	<li>
+	<p align="left"><b><font size="2">Properties<br>
+	</font>
+	</b><font size="2">Properties window displays a list of properties of currently selected 
+	element.</font></li>
+	<li>
+	<p align="left"><b><font size="2">Ribbon bar<br>
+	</font>
+	</b><font size="2">The Ribbon Control design surface.</font></li>
+	<li>
+	<p align="left"><b><font size="2">Status bar<br>
+	</font>
+	</b><font size="2">The Status Bar design surface.</font></li>
+</ul>
+<p align="left"><a href="#Top"><font size="2">[Back to top]</font></a></p>
+<p align="left"><b>
+<a name="Adding a Category"><font size="2"></font></a><font size="2">Adding a Category 
+</font></b></p>
+<p align="left"><font size="2">An usable Ribbon Control 
+must contain at least one category, therefore the first thing you have to do 
+when you start the design process is to add a Category.<br>
+To add a new Category select a Category object from the Toolbox, or click the 
+&quot;Add Category&quot; action in the Actions window, or invoke a context menu clicking 
+on the Ribbon Control's design surface. This action shows up the &quot;Add Category&quot; 
+dialog.</font></p>
+<p align="left"><font size="2"><img border="0" src="design2.jpg"></font></p>
+<p align="left"><i><font size="2">Name</font></i><font size="2"> - type the 
+Category name.<br>
+<i>Keys</i> - type the Category keytip.<br>
+<i>Images</i>. Here you have the opportunity to specify small and large images 
+for Ribbon elements, that will be added to the Category. The images can be 
+loaded from an image list contained in bmp or png file.&nbsp; The Designer 
+breaks an image list to individual images and later you'll be able to specify an 
+image index for individual Ribbon element.</font></p>
+<p align="left"><font size="2">When a Category has been 
+added, you can start adding Panels.</font></p>
+<p align="left"><a href="#Top"><font size="2">[Back to top]</font></a></p>
+<p align="left"><b><a name="Adding a Panel">
+<font size="2"></font>
+</a><font size="2">Adding a Panel</font></b><font size="2"> </font> </p>
+<p align="left"><font size="2">To add a Panel select a 
+Panel object from the Toolbox, click a link in the Actions window, or invoke a 
+context menu by clicking right mouse button on the Category's design surface.<br>
+This action brings the &quot;Add Panel&quot; dialog</font></p>
+<p align="left"><font size="2"><img border="0" src="design3.jpg"></font></p>
+<p align="left"><i><font size="2">Name - </font> </i><font size="2">&nbsp;specifies 
+the new Panel name.<br>
+<i>Keys </i>- specifies the Panel keytips.<br>
+<i>Image -&nbsp; </i>allows to select an image for the Panel. This image is 
+displayed the Panel is placed on QAT.<br>
+<i>Use Launch Button&nbsp; </i>- tick this box if you wish to assign a Launch 
+Button to the Panel.<br>
+<i>Tooltip - </i>Specify the Launch Button tooltip.<br>
+<i>Description&nbsp; - </i>Specify the Launch Button description displayed on 
+the tooltip.<br>
+<i>Keys </i>- Specify the Launch Button keytips.<br>
+<i>Image</i>&nbsp; - Select an image that will be displayed when Launch Button 
+is added on the QAT.<br>
+<i>ID - </i>Select a command ID for the Launch Button.</font></p>
+<p align="left"><font size="2">Now you can add elements to 
+the Panel.</font></p>
+<p align="left"><a href="#Top"><font size="2">[Back to top]</font></a><font size="2"><br>
+<br>
+<b><a name="Adding Elements and Setting Properties"></a>Adding Elements and 
+Setting Properties </b><br>
+<br>
+To add a new element to a Panel select the appropriate element in the Toolbox 
+window or invoke a context menu by clicking right mouse button on the Panel's 
+design surface. The newly added element is selected in the Designer and its 
+properties can be edited in the Properties window. You can define element's 
+caption, tooltip, tooltip description, keytips, large and small images (if 
+appropriate), width (for combo boxes, edit boxes, slider) and so on. <br>
+Element's images can be either selected from image lists specified during the 
+&quot;Add Category&quot; step, or loaded from separate bmp, png or ico file. <br>
+Pay attention that the <b>ID</b> property allows you either select the Element's 
+Command ID from a list of existing commands, or specify a new Command ID.</font></p>
+<p align="left"><a href="#Top"><font size="2">[Back to top]</font></a><font size="2"><br>
+<br>
+<b><a name="Selecting a New Image and Editing Image Collection"></a>Selecting a 
+New Image and Editing Image Collection </b><br>
+<br>
+You can always edit the image collection, associated with current Category and / 
+or replace an element's image at design time.<br>
+For this purpose select an Element and drop down combo box associated with the 
+&quot;Image&quot; property.<br>
+<br>
+<img border="0" src="design4.jpg"><br>
+<br>
+Now you can select a new image from the list, or select &lt;edit...&gt;. This action 
+brings up the &quot;Image Collection&quot; dialog:<br>
+<br>
+<img border="0" src="design5.jpg"><br>
+<br>
+Now click &quot;Add...&quot; button to add images from a file (bmp, png, ico), or from 
+another Image Collection. <br>
+Click Delete to remove a selected image for the Image Collection.<br>
+Click Clear to remove all images from the Image Collection.</font></p>
+<p align="left"><font size="2">When you have filled up 
+Categories and Panels, you can set up the initial state of QAT, e.g. select 
+elements, that will appear on the QAT at the application start up.</font></p>
+<p align="left"><a href="#Top"><font size="2">[Back to top]</font></a><font size="2"><br>
+<br>
+<b><a name="Setting up QAT"></a>Setting up QAT <br>
+<br>
+</b>Click the QAT arrow on the Designer surface:<br>
+<br>
+<img border="0" src="design6.jpg"><br>
+<br>
+Now you can edit QAT properties in the Properties window.<br>
+The Position property specifies the position of QAT on the application start up 
+- below or above the Ribbon Control.<br>
+Click on the Items property brings the &quot;Edit QAT Items&quot; dialog:<br>
+<br>
+<img border="0" src="design7.jpg"><br>
+<br>
+You can look through the list of existing Commands and add them to the Quick 
+Access Toolbar. A check box displayed with each command in the &quot;Quick Access 
+Toolbar&quot; list indicates whether the command is visible on the QAT, or available 
+from the QAT's drop down button. <br>
+<br>
+Note, that commands do not show up on the QAT in Designer.<br>
+<br>
+When you have completed the design process, or just want to see the designed 
+Ribbon in action, save the project and perform a couple of steps to setup the 
+application Ribbon Control.</font></p>
+<p align="left"><a href="#Top"><font size="2">[Back to top]</font></a><font size="2"><br>
+<br>
+</font>
+<b><font size="2"><a name="Modifying the  Application"></a>Modifying the Application 
+</font> </b>
+</p>
+<p align="left"><font size="2">The Designer creates an XML 
+representation of Ribbon Control layout, generates png files with Image 
+Collections, creates an *.rc2 with references to the generated files, and adds 
+definitions of Command IDs created at design time to resource.h file.&nbsp; 
+Also, when the project is being saved, you are offered an option to add a 
+reference to rc2 file to the application's *.rc file.<br>
+All Designer's output is located in the <b>res\BCGSoft_ribbon</b> folder.<br>
+<br>
+If you're working with BCGControlBar Pro-based project, perform the following 
+steps to connect your application with newly designed Ribbon control:</font></p>
+<ol>
+	<li>
+	<p align="left"><font size="2">Declare the Ribbon 
+	Control object in CMainFrame class:<br>
+	<br>
+	CBCGPRibbonBar m_wndRibbonBar;<br>
+&nbsp;</font></li>
+	<li>
+	<p align="left"><font size="2">In CMainFrame::OnCreate 
+	create and initialize the Ribbon Control:<br>
+	<br>
+	<font color="#0000FF">if</font> (!m_wndRibbonBar.Create(<font color="#0000FF">this</font>))<br>
+	{<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> -1;<br>
+	}<br>
+	<br>
+	<font color="#0000FF">if</font> (!m_wndRibbonBar.LoadFromXML(_T(&quot;IDR_BCGP_RIBBON_XML&quot;)))<br>
+	{<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> -1;<br>
+	}<br>
+&nbsp;</font></li>
+</ol>
+<p><font size="2">If you're working with pure MFC 
+application, please follow this link to learn how to migrate from MFC to 
+BCGControlBar Pro:<br>
+</font>
+<a href="http://www.bcgsoft.com/faq.htm#Q2"><font size="2">http://www.bcgsoft.com/faq.htm#Q2</font></a></p>
+<p><a href="#Top"><font size="2">[Back to top]</font></a></p>
+
+</body>
+
+</html>

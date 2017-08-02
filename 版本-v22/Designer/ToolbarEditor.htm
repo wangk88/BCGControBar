@@ -1,0 +1,209 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="main.css" type="text/css">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Toolbar Editor</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+  <tr>
+    <td valign="top"><b><font size="4">
+    <img border="0" src="bcgpro.gif" width="69" height="85"></font></b></td>
+    <td valign="top"><font size="4"><b>Toolbar Editor</b></font><b><font size="4"><br>
+Developer Guide</font></b><p>Copyright © 1998-2017 BCGSoft CO Ltd. All rights 
+    reserved. <br>
+    Microsoft, Visual C++, Visual Studio, Visual Studio.NET, Outlook, Windows 
+    and Windows NT are either registered trademarks or trademarks of Microsoft 
+    Corporation in the United States and/or other countries. All other 
+    trademarks are the property of their respective owners.</td>
+  </tr>
+</table>
+
+<p><font size="2">Toolbar Editor allows you easily create and 
+manage application toolbars. You can add toolbar buttons, create and edit 
+toolbar button images for various color modes and screen resolutions and 
+associate buttons with command IDs.</font></p>
+<p><font size="2">Toolbar Editor works directly with project 
+resources and modifies *.rc and resource.h files. Also it adds or modifies some 
+files in the /res folder (images and *.rc2 files), therefore if you work with a 
+source controlled project don't forget to check out the resources first.</font></p>
+<p><font size="2">The Toolbar Editor application is named <b>
+BCGToolbarEditor.exe </b>and<b> </b>installed in &lt;install path&gt;\BCGSoft\BCGControlBarPro\Designers 
+folder. The corresponding shortcut is added to &quot;BCGCBPro&quot; application group.</font></p>
+<p><font size="2">Toolbar Editor supports images in .bmp, ico and 
+.png formats with up to 32bpp colors, therefore you can quickly adapt the 
+default toolbar (16 colors) to high quality semi-transparent look.</font></p>
+<p align="left"><u><b><font size="2">Description of Toolbar Editor interface.</font></b></u></p>
+<p><b><font size="2">Menu</font></b></p>
+<ol>
+	<li><font size="2">File</font><ul>
+		<li><font size="2">Open... - opens an existing Visual 
+		Studio project (dsp, vcproj, vcxproj).</li>
+		<li><font size="2">Close - closes a project being edited./font></li>
+		<li><font size="2">Save - saves a project being edited./font></li>
+		<li><font size="2">Exit - closes Toolbar Editor.<br>&nbsp;</font></li>
+	</ul></li>
+	<li><font size="2">Edit </font>
+	<ul>
+		<li><font size="2">Cut, Edit, Paste - allow to edit 
+		currently selected toolbar button images.<br>
+&nbsp;</font></li>
+	</ul>
+	</li>
+	<li><font size="2">View - allows to show or hide application 
+	toolbars, status bar and docking windows.<br>
+&nbsp;</font></li>
+	<li><font size="2">Help - displays Toolbar Editor version 
+	info and this development guide.</font></li>
+</ol>
+<p><b><font size="2">Docking Windows</font></b></p>
+<ol>
+	<li><font size="2">Actions - displays shortcuts to actions 
+	available in the current context. For example, if there is no open project, 
+	you can only open an existing project, or project from the recent list:<br>
+	<br>
+	<img border="0" src="ToolbarEditor2.jpg"> <br>
+&nbsp;</font></li>
+	<li><font size="2">Toolbars - displays a list of toolbars 
+	available in the project being edited. Use dockable pane to add, delete and 
+	find toolbars (the corresponding buttons on the embedded toolbar:<br>
+	<br>
+	<img border="0" src="ToolbarEditor3.jpg"><br>
+	<br>
+	If you click &quot;Add&quot; button the &quot;Add Toolbar&quot; dialog appears:<br>
+	<br>
+	<img border="0" src="ToolbarEditor14.jpg"><br>
+	<br>
+	ID - specify the new toolbar resource ID.<br>
+	Width/Height - specify dimensions of a single image in toolbar's image list.<br>
+	Language - allows to create localized resources.<br>
+&nbsp;</font></li>
+	<li><font size="2">Properties - displays properties for the 
+	currently selected object (toolbar or toolbar button). <br>
+	<br>
+	The following screenshot illustrates toolbar properties:<br>
+	<img border="0" src="ToolbarEditor4.jpg"><br>
+	<br>
+	ID - toolbar resource ID<br>
+	Images Hot/Cold/Disables - allows to assign existing image list IDs to the 
+	toolbar.<br>
+	Width/Height - specifies a single image dimension in the toolbar's image 
+	list. Changing these properties affects all image lists.<br>
+	<br>
+	The following screenshot illustrates toolbar button properties:<br>
+	<img border="0" src="ToolbarEditor5.jpg"><br>
+	<br>
+	ID - toolbar button's command ID<br>
+	Width/Height - specifies a single image dimension in the parent toolbar's 
+	image list. Changing these properties affects all image lists.<br>
+&nbsp;</font></li>
+	<li><font size="2">&nbsp; Toolbox - contains a list of 
+	elements, which can be used for toolbar editing:<br>
+	<br>
+	<img border="0" src="ToolbarEditor6.jpg"><br>
+	<br>
+	Button - select this element to insert new buttons into a toolbar being 
+	edited.<br>
+	Separator - select this element to insert separators between toolbar 
+	buttons.<br>
+	Pointer - select this element to select buttons on a toolbar being edited.<br>
+&nbsp;</font></li>
+	<li><font size="2">Images - displays a list of images 
+	available for the currently selected button (up to 4 images - default, hot, 
+	cold, disabled).<br>
+	<br>
+	<img border="0" src="ToolbarEditor7.jpg"><br>
+	<br>
+	The embedded toolbar allows to edit the selected image bringing up the image 
+	editor, import an image from an external file, copy the selected image to 
+	the Clipboard, paste an image from the Clipboard and clear the selected 
+	image.</font></li>
+</ol>
+<p><b><font size="2">Main View</font></b></p>
+<p><font size="2">
+<img border="0" src="ToolbarEditor8.jpg"><br>
+<br>
+The Main View displays a toolbar selected in the <b>Toolbars </b>window. You can 
+edit this toolbar by clicking toolbar buttons. You can arrange existing buttons 
+using drag&amp;drop.<br>
+Right click brings up a context menu with available editing options:<br>
+<br>
+<img border="0" src="ToolbarEditor9.jpg"><br>
+You can define and edit additional image lists with hot, cold and disabled 
+images (each image list is optional). If an image list has not been created, 
+click the corresponding &quot;Set ID...&quot; button for the desired image list. It brings 
+up a dialog, which allows to define a new image list ID, or select an existing 
+ID:<br>
+<br>
+<img border="0" src="ToolbarEditor10.jpg"><br>
+<br>
+When a new image list has been assigned to a toolbar, you can select it for 
+editing by choosing the appropriate radio button:<br>
+<br>
+<img border="0" src="ToolbarEditor11.jpg"><br>
+<br>
+This screenshot illustrates a new image list with disabled images, where a 
+disabled image has been added for 3-rd button (Save). Image lists with hot and 
+cold images have not been added, therefore their corresponding radio buttons are 
+disabled.</font></p>
+<p><b><font size="2">Image Editor<br>
+<br>
+</font>
+</b><font size="2">The <b>Image Editor </b>dialog<b> </b>appears when you select &quot;Edit Image&quot; 
+on the <b>Images </b>pane or from the toolbar editor's context menu on the <b>
+Main View</b>.</font></p>
+<p><font size="2">
+<img border="0" src="ToolbarEditor12.jpg"><br>
+<br>
+<b>Add New Image<br>
+<br>
+</b>The <b>Add New Image</b> dialog appears when you click &quot;Import Image&quot; button 
+on the embedded toolbar on the <b>Images </b>pane. The imported image will 
+replace the currently selected image in the image list.</font></p>
+<p><font size="2">
+<img border="0" src="ToolbarEditor13.jpg"><br>
+<br>
+Click the &quot;Load...&quot; button to load an existing file (.bmp, .ico, 
+and .png images are supported). Click &quot;Clear&quot; button to clear the image that has 
+been loaded. Select transparent color from the drop-down color picker if the 
+loaded image is not 32bpp.</font></p>
+<p align="left"><u><b><font size="2">General Workflow</font></b></u></p>
+<ol>
+	<li><font size="2">Start the application and open an existing 
+	Visual Studio project or separate resource file (*.rc).</font></li>
+	<li><font size="2">To add or delete a toolbar click the 
+	appropriate button on the <b>Toolbars</b> pane toolbar.</font></li>
+	<li><font size="2">Select a toolbar to be edited -&gt; the 
+	default image list appears in the <b>Main View</b>.</font></li>
+	<li><font size="2">Click &quot;Set ID...&quot; button on the <b>Main 
+	View </b>to create additional image lists with hot, cold and disabled images 
+	(these image lists are optional).</font></li>
+	<li><font size="2">Select the desired radio button on the <b>
+	Main View </b>to edit a specific image list. </font></li>
+	<li><font size="2">Use<b> </b>either<b> Toolbox</b>, or 
+	context menu, or <b>Actions </b>pane shortcuts to insert or delete<b> </b>
+	toolbar buttons or separators. All image lists are updated accordingly.</font></li>
+	<li><font size="2">Select a toolbar button on the <b>Main 
+	View </b>and use drag&amp;drop to change button's position. All image lists are 
+	updated accordingly.</font></li>
+	<li><font size="2">Use <b>Properties</b> pane<b> </b>to 
+	assign a command ID<b> </b>to a selected toolbar button (<i>ID</i> 
+	property). If you change <i>Width </i>or/and <i>Height </i>properties, all 
+	image lists will be updated.</font></li>
+	<li><font size="2">Use <b>Images </b>pane to edit images for 
+	selected toolbar buttons.</font></li>
+	<li><font size="2">Save the project and compile the 
+	application to see the changes. If you've added new image lists, you may 
+	need to specify their IDs in the application code.</font><br>
+&nbsp;</li>
+</ol>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="main.css" type="text/css">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Visual Designer</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+  <tr>
+    <td valign="top"><b><font size="4">
+    <img border="0" src="bcgpro.gif" width="69" height="85"></font></b></td>
+    <td valign="top"><font size="4"><b>Visual</b></font><b><font size="4"> Designer<br>
+Developer Guide</font></b><p>Copyright © 1998-2017 BCGSoft CO Ltd. All rights 
+    reserved. <br>
+    Microsoft, Visual C++, Visual Studio, Visual Studio.NET, Outlook, Windows 
+    and Windows NT are either registered trademarks or trademarks of Microsoft 
+    Corporation in the United States and/or other countries. All other 
+    trademarks are the property of their respective owners.</td>
+  </tr>
+</table>
+
+<ol>
+	<li>
+	<p align="left">
+	<a href="#Starting the Visual designer."><font size="2">Starting the Visual Designer</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Brief Description of Docking Windows"><font size="2">Brief Description of Docking 
+	Windows</font></a></li>
+	<li>
+	<p align="left">
+	<a href="#Adding and Editing a Gauge"><font size="2">Adding and Editing a Gauge</font></a></li>
+	<li>
+	<p align="left">
+	<font size="2"><a href="#Testing a Digital Dashboard or Diagram">Testing a 
+	Digital Dashboard or Diagram</a></font></li>
+	<li>
+	<p align="left">
+	<font size="2"><a href="#Modifying the Application">Adding Dashboard to Application</a></font></li>
+</ol>
+<p align="left"><font size="2">The Visual Designer allows you quickly create and 
+modify digital dashboards and diagrams for MFC applications. It generates XML files 
+describing layout and properties of dashboard and diagram elements. The XML can be loaded 
+and processed at the runtime whenever required to present an interactive digital 
+dashboard and/or diagram to the end user.</font></p>
+<p align="left"><font size="2">This guide explains how to 
+take advantage of the Designer tool.</font></p>
+<p><b>
+<a name="Starting the Visual designer."><font size="2"></font></a>
+<font size="2">Starting the Visual designer.</font></b></p>
+<p><font size="2">Run BCGVisualDesigner.exe application located in &lt;BCGControlBar Pro (or 
+BCGSuite) Installation Folder&gt;\Designer folder. Now you can start creation of a 
+new dashboard or diagram, or load the existing data file. The designer data is saved in 
+files with extension &quot;visual-bcgsoft&quot;.</font></p>
+<p><font size="2">
+<img border="0" src="VisualDesigner.jpg" width="626" height="422"></font></p>
+<p><a href="#Top"><font size="2">[Back to Top]</font></a><font size="2"><br>
+<br>
+</font>
+<b><font size="2"><a name="Brief Description of Docking Windows"></a>Brief Description of 
+Docking Windows</font></b></p>
+<ul>
+	<li><b><font size="2">Toolbox</font></b><font size="2"><br>
+	The Toolbox window contains a list of Gauges and Diagram Elements that are supported by Visual 
+	Designer and can be dropped on the design surface at the design time.<br>
+&nbsp;</font></li>
+	<li><b><font size="2">Elements<br>
+	</font>
+	</b><font size="2">The Elements window contains a list of Gauges and Diagram 
+	Elements located on the design 
+	surface. You can click an Element in the list to select an object on the design 
+	surface.<br>
+&nbsp;</font></li>
+	<li><b><font size="2">Properties<br></font></b><font size="2">The Properties window allows to edit properties of selected objects. If 
+	no object is selected on the design surface, you can set properties of the 
+	visual container, such as background color.&nbsp; <br>&nbsp;</font></li>
+</ul>
+<p><a href="#Top"><font size="2">[Back to Top]</font></a><font size="2"><br>
+<br>
+</font>
+<b><font size="2"><a name="Adding and Editing a Gauge"></a>Adding and Editing a Gauge</font></b></p>
+<p><font size="2">To add a new Gauge select the desired object from the Toolbox window and then 
+click the design surface. Now you can drag the object to reposition it on the 
+design surface, change its size and set its specific properties in the 
+Properties window. <br>
+Right mouse click on the design surface or selected object brings up a context 
+sensitive popup menu that allows you to add new objects, perform 
+cut/copy/paste/delete operations and change Z order of selected objects. </font> </p>
+<p><font size="2">Some Gauges support collections of sub-gauges and additional scales. The 
+collections can be edited with Properties window - just click &quot;Scales&quot; or &quot;Subgauges&quot; 
+property. It will bring up an additional dialog for collection editing:</font><p>
+<font size="2">
+<img border="0" src="VisualDesigner_EditSubGauges.jpg" width="605" height="485"></font><p>
+<font size="2">Sub-Gauge Editor</font><p>
+<font size="2">
+<img border="0" src="VisualDesigner_EditScales.jpg" width="605" height="485"><br>
+<br>
+Scale Editor</font><p><a href="#Top"><font size="2">[Back to Top]</font></a><font size="2"><br>
+<br>
+</font>
+<b><font size="2"><a name="Testing a Digital Dashboard or Diagram"></a>Testing a Digital Dashboard 
+or Diagram</font></b><p>
+<font size="2">When you want to see a dashboard in action select <b>View | Run Test </b>menu 
+item. It will display your digital dashboard or diagram in a separate window and allow 
+interaction with gauges whose property &quot;Interactive Mode&quot; was set to <b>true </b>
+in the designer.<br>
+<br>
+<img border="0" src="VisualDesigner_Test.jpg" width="400" height="399"></font><p>
+<b><font size="2"><a name="Modifying the Application"></a>Adding Dashboard or Diagram to Application</font></b><ol>
+	<li><font size="2">Save your XML file to the application RES folder (the 
+	default extension is &quot;visual-bcgsoft&quot;).</font></li>
+	<li><font size="2">Import XML file to your resources. You need to specify &quot;BCGP_VISUAL_XML&quot; 
+	as resource type.</font></li>
+	<li><font size="2">Load XML into the visual container:<br>
+&nbsp;</font></li>
+	</ol>
+	<blockquote>
+		<table border="0" bgcolor="#999999" cellspacing="1" cellpadding="4">
+			<tr>
+				<td bgcolor="#F1F3F4"><font size="2">CBCGPVisualContainerCtrl&nbsp;&nbsp; 
+				m_wndContainer;<br>
+				...<br>
+				m_wndContainer.GetVisualContainer()-&gt;LoadFromXML(IDR_DASHBOARD1);</font></td>
+			</tr>
+		</table>
+	</blockquote>
+	<p>
+<a href="#Top"><font size="2">[Back to Top]</font></a><font size="2"><br>
+&nbsp;</font>
+
+</body>
+
+</html>
